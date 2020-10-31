@@ -33,6 +33,12 @@
         android:text="Details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <Button
+        android:layout_marginTop="30dp"
+        android:id="@+id/detailsBtnId2"
+        android:text="Details2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 
 </LinearLayout>

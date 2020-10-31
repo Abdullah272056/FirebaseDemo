@@ -25,7 +25,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     EditText nameEditText;
-    Button saveButton,detailsBtn;
+    Button saveButton,detailsBtn,detailsBtn2;
     Spinner departmentSpinner;
     DatabaseReference databaseStudent;
     @Override
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         nameEditText=findViewById(R.id.nameEditTextId);
         saveButton=findViewById(R.id.saveButtonId);
         detailsBtn=findViewById(R.id.detailsBtnId);
+        detailsBtn2=findViewById(R.id.detailsBtnId2);
         departmentSpinner=findViewById(R.id.departmentSpinnerId);
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,DetailsActivity.class);
+                startActivity(intent);
+            }
+        });
+        detailsBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,DetailsActivity2.class);
                 startActivity(intent);
             }
         });
