@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -44,11 +45,9 @@ public class DetailsActivity2 extends AppCompatActivity {
                 for (DataSnapshot studentSnapshot:snapshot.getChildren()){
                     Student student=studentSnapshot.getValue(Student.class);
                     studentList.add(student);
-                    //Toast.makeText(MainActivity.this, String.valueOf(studentList.get(1).getName()), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DetailsActivity2.this, String.valueOf(studentList.size()), Toast.LENGTH_SHORT).show();
                 }
                 recyclerView.setAdapter(customAdapter2);
-                //listView.setAdapter(customAdapter);
-
             }
 
             @Override

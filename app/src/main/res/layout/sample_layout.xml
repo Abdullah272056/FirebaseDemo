@@ -23,5 +23,9 @@
         android:text="department"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <View
+        android:background="#222"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
 
 </LinearLayout>

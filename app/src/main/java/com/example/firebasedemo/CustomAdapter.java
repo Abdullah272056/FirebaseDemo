@@ -31,8 +31,8 @@ public class CustomAdapter extends ArrayAdapter<Student> {
       Student student=studentsList.get(position);
         TextView nameTextVew=view.findViewById(R.id.nameTextViewId);
         TextView departmentTextView=view.findViewById(R.id.departmentTextViewId);
-        nameTextVew.setText(student.getName());
-        departmentTextView.setText(student.getDepartment());
+        nameTextVew.setText("Name: "+student.getName());
+        departmentTextView.setText("Dept: "+student.getDepartment());
         return view;
     }
 }

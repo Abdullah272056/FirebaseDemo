@@ -31,8 +31,8 @@ public class CustomAdapter2 extends RecyclerView.Adapter<CustomAdapter2.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.nameTextView.setText(studentList.get(position).getName());
-        holder.departmentTextView.setText(studentList.get(position).getDepartment());
+        holder.nameTextView.setText("Name: "+studentList.get(position).getName());
+        holder.departmentTextView.setText("Dept: "+studentList.get(position).getDepartment());
     }
 
     @Override
