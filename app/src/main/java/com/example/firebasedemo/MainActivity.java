@@ -24,8 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         databaseStudent= FirebaseDatabase.getInstance().getReference("student");
-
-
+        
         nameEditText=findViewById(R.id.nameEditTextId);
         saveButton=findViewById(R.id.saveButtonId);
         departmentSpinner=findViewById(R.id.departmentSpinnerId);
