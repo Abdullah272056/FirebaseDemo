@@ -4,12 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginRight="20dp"
-    android:layout_marginLeft="20dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
     tools:context=".MainActivity">
 
    <EditText
-       android:layout_marginTop="30dp"
        android:id="@+id/nameEditTextId"
        android:textSize="25sp"
        android:layout_width="match_parent"
@@ -20,25 +19,38 @@
         android:id="@+id/departmentSpinnerId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
     <Button
         android:layout_marginTop="30dp"
         android:id="@+id/saveButtonId"
         android:text="Save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/detailsBtnId"
+            android:text="ListView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/detailsBtnId2"
+            android:text="RecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <ListView
+        android:layout_marginTop="15dp"
+        android:id="@+id/mainPageListViewId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
-    <Button
-        android:layout_marginTop="30dp"
-        android:id="@+id/detailsBtnId"
-        android:text="ListView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:layout_marginTop="30dp"
-        android:id="@+id/detailsBtnId2"
-        android:text="RecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
 
 </LinearLayout>
