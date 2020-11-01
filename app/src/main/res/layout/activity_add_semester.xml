@@ -35,6 +35,10 @@
         android:text="save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="10dp"
+        android:id="@+id/recyclerViewId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>
