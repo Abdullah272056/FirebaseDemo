@@ -14,25 +14,30 @@ import java.util.List;
 public class CustomAdapter3 extends RecyclerView.Adapter<CustomAdapter3.MyViewHolder> {
     Context context;
     private List<StudentSemester> studentSemesterList;
-    private List<Student> studentList;
+    String name;
+    String department;
 
-    public CustomAdapter3(Context context, List<StudentSemester> studentSemesterList) {
+    public CustomAdapter3(Context context, List<StudentSemester> studentSemesterList,String name, String department) {
         this.context = context;
         this.studentSemesterList = studentSemesterList;
+        this.name=name;
+        this.department=department;
     }
 
     @NonNull
     @Override
     public CustomAdapter3.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater= LayoutInflater.from(context);
-        View view= layoutInflater.inflate(R.layout.sample_layout,parent,false);
+        View view= layoutInflater.inflate(R.layout.all_details_sample,parent,false);
         return new CustomAdapter3.MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CustomAdapter3.MyViewHolder holder, int position) {
-        holder.nameTextView.setText("Semester "+studentSemesterList.get(position).getSemester());
-        holder.departmentTextView.setText("CGPA: "+studentSemesterList.get(position).getCgpa());
+        holder.semesterTextView.setText("Semester: "+studentSemesterList.get(position).getSemester());
+        holder.cgpaTextView.setText("CGPA: "+studentSemesterList.get(position).getCgpa());
+        holder.nameTextView.setText("Name: "+name);
+        holder.departmentTextView.setText("Dept : "+department);
     }
 
     @Override
@@ -41,11 +46,13 @@ public class CustomAdapter3 extends RecyclerView.Adapter<CustomAdapter3.MyViewHo
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView nameTextView,departmentTextView;
+        TextView nameTextView,departmentTextView,semesterTextView,cgpaTextView;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             nameTextView=itemView.findViewById(R.id.nameTextViewId);
             departmentTextView=itemView.findViewById(R.id.departmentTextViewId);
+            semesterTextView=itemView.findViewById(R.id.semesterTextViewId);
+            cgpaTextView=itemView.findViewById(R.id.cgpaTextViewId);
         }
     }
 }

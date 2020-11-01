@@ -38,6 +38,7 @@ public class DetailsActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent=new Intent(DetailsActivity.this,AddSemesterActivity.class);
                 intent.putExtra("name",studentList.get(position).getName());
+                intent.putExtra("department",studentList.get(position).getDepartment());
                 intent.putExtra("id",studentList.get(position).getId());
                 startActivity(intent);
             }

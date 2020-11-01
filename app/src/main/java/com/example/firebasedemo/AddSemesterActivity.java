@@ -28,7 +28,7 @@ public class AddSemesterActivity extends AppCompatActivity {
     Button  saveButton;
     Spinner semesterSpinner;
     EditText cgpaEditText;
-    String name, id;
+    String name, id,dept;
     DatabaseReference databaseReference;
 
 
@@ -48,12 +48,13 @@ public class AddSemesterActivity extends AppCompatActivity {
 
         id = getIntent().getStringExtra("id");
         name=getIntent().getStringExtra("name");
+        dept=getIntent().getStringExtra("department");
         studentNameTextView.setText(name);
 
         databaseReference= FirebaseDatabase.getInstance().getReference("Semester").child(id);
 
         studentSemesterList=new ArrayList<>();
-        customAdapter3=new CustomAdapter3(AddSemesterActivity.this,studentSemesterList);
+        customAdapter3=new CustomAdapter3(AddSemesterActivity.this,studentSemesterList,name,dept);
         recyclerView.setLayoutManager(new LinearLayoutManager(AddSemesterActivity.this));
 
 
