@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -30,6 +32,12 @@ public class DetailsActivity extends AppCompatActivity {
         studentList=new ArrayList<>();
         customAdapter=new CustomAdapter(DetailsActivity.this,studentList);
         listView=findViewById(R.id.listViewId);
+        listView.setOnItemClickListener(new ListView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                
+            }
+        });
 
 
     }

@@ -6,4 +6,16 @@
         <item>Electrical</item>
         <item>Environment</item>
     </array>
+
+    <array name="semester">
+        <item>First</item>
+        <item>Second</item>
+        <item>Third</item>
+        <item>Fourth</item>
+        <item>Fifth</item>
+        <item>Sixth</item>
+        <item>Seventh</item>
+        <item>Eighth</item>
+    </array>
+
 </resources>
