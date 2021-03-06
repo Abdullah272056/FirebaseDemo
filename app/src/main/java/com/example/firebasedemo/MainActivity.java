@@ -25,7 +25,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     EditText nameEditText;
-    Button saveButton,detailsBtn,detailsBtn2;
+    Button saveButton,listViewButton,recyclerViewButton;
     Spinner departmentSpinner;
     DatabaseReference databaseReference;
     ListView listView;
@@ -38,28 +38,30 @@ public class MainActivity extends AppCompatActivity {
         databaseReference= FirebaseDatabase.getInstance().getReference("student");
         nameEditText=findViewById(R.id.nameEditTextId);
         saveButton=findViewById(R.id.saveButtonId);
-        detailsBtn=findViewById(R.id.detailsBtnId);
-        detailsBtn2=findViewById(R.id.detailsBtnId2);
+        listViewButton=findViewById(R.id.listViewBtnId);
+        recyclerViewButton=findViewById(R.id.recyclerViewBtnId);
 
         studentList=new ArrayList<>();
         customAdapter=new CustomAdapter(MainActivity.this,studentList);
         listView=findViewById(R.id.mainPageListViewId);
 
         departmentSpinner=findViewById(R.id.departmentSpinnerId);
+
+
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 addStudentInfo();
             }
         });
-        detailsBtn.setOnClickListener(new View.OnClickListener() {
+        listViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,DetailsActivity.class);
                 startActivity(intent);
             }
         });
-        detailsBtn2.setOnClickListener(new View.OnClickListener() {
+        recyclerViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,DetailsActivity2.class);
@@ -93,15 +95,18 @@ public class MainActivity extends AppCompatActivity {
         String name=nameEditText.getText().toString();
         String department= departmentSpinner.getSelectedItem().toString();
         if (!TextUtils.isEmpty(name)){
+            // get unique key from firebase
         String id=databaseReference.push().getKey();
+        // create object
         Student student=new Student(id,name,department);
+            // data set in firebase Db
             databaseReference.child(id).setValue(student);
             Toast.makeText(this, "insert success", Toast.LENGTH_SHORT).show();
         }else {
 
             nameEditText.setError("Enter Name");
             nameEditText.setFocusable(true);
-            //Toast.makeText(this, "name is empty", Toast.LENGTH_SHORT).show();
+
         }
     }
 }

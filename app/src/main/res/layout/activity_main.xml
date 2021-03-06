@@ -35,16 +35,17 @@
         android:layout_height="wrap_content">
         <Button
             android:layout_weight="1"
-            android:id="@+id/detailsBtnId"
+            android:id="@+id/listViewBtnId"
             android:text="ListView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
+
         <Button
-            android:layout_weight="1"
-            android:id="@+id/detailsBtnId2"
-            android:text="RecyclerView"
+            android:id="@+id/recyclerViewBtnId"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="RecyclerView" />
     </LinearLayout>
     <ListView
         android:layout_marginTop="15dp"
