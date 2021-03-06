@@ -98,7 +98,10 @@ public class MainActivity extends AppCompatActivity {
             databaseReference.child(id).setValue(student);
             Toast.makeText(this, "insert success", Toast.LENGTH_SHORT).show();
         }else {
-            Toast.makeText(this, "name is empty", Toast.LENGTH_SHORT).show();
+
+            nameEditText.setError("Enter Name");
+            nameEditText.setFocusable(true);
+            //Toast.makeText(this, "name is empty", Toast.LENGTH_SHORT).show();
         }
     }
 }
