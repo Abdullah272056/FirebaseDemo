@@ -29,7 +29,9 @@ public class DetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
+        // firebase dataBase access
         databaseReference= FirebaseDatabase.getInstance().getReference("student");
+
         studentList=new ArrayList<>();
         customAdapter=new CustomAdapter(DetailsActivity.this,studentList);
         listView=findViewById(R.id.listViewId);
@@ -47,6 +49,8 @@ public class DetailsActivity extends AppCompatActivity {
 
     }
 
+
+    // onCreate method call then data load
     @Override
     protected void onStart() {
 

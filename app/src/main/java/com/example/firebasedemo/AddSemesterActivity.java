@@ -51,6 +51,7 @@ public class AddSemesterActivity extends AppCompatActivity {
         dept=getIntent().getStringExtra("department");
         studentNameTextView.setText(name);
 
+        // dataBase access with id
         databaseReference= FirebaseDatabase.getInstance().getReference("Semester").child(id);
 
         studentSemesterList=new ArrayList<>();
@@ -99,6 +100,7 @@ public class AddSemesterActivity extends AppCompatActivity {
         if (!TextUtils.isEmpty(cgpa)){
             String id=databaseReference.push().getKey();
             StudentSemester studentSemester=new StudentSemester(id,semester,cgpa);
+            // set data 
             databaseReference.child(id).setValue(studentSemester);
         }
         else {

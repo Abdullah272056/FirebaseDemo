@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         String id=databaseReference.push().getKey();
         // create object
         Student student=new Student(id,name,department);
-            // data set in firebase Db
+            //  set data in firebase Db
             databaseReference.child(id).setValue(student);
             Toast.makeText(this, "insert success", Toast.LENGTH_SHORT).show();
         }else {

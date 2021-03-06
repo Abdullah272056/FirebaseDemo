@@ -17,6 +17,7 @@ public class CustomAdapter extends ArrayAdapter<Student> {
     private Activity context;
     private List<Student> studentsList;
 
+    // constructor
     public CustomAdapter(@NonNull Activity context, List<Student> studentsList) {
         super(context, R.layout.sample_layout, studentsList);
         this.context = context;
@@ -28,7 +29,7 @@ public class CustomAdapter extends ArrayAdapter<Student> {
     public View getView(int position,View convertView, ViewGroup parent) {
         LayoutInflater layoutInflater=context.getLayoutInflater();
         View view=layoutInflater.inflate(R.layout.sample_layout,null,true);
-      Student student=studentsList.get(position);
+        Student student=studentsList.get(position);
         TextView nameTextVew=view.findViewById(R.id.nameTextViewId);
         TextView departmentTextView=view.findViewById(R.id.departmentTextViewId);
         nameTextVew.setText("Name: "+student.getName());
