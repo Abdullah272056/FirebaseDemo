@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+    android:background="#D3D2D2"
+    android:paddingBottom="20dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:textSize="22sp"
+        android:textAlignment="center"
+        android:text="Select Action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" />
+    <View
+        android:layout_marginTop="20dp"
+        android:background="#FFC107"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <TextView
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:text="Update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" />
+    <View
+        android:background="#FFC107"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <TextView
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:text="Delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" />
+    <View
+        android:background="#FFC107"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <TextView
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:text="Cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" />
+    <View
+
+        android:background="#FFC107"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+</LinearLayout>
